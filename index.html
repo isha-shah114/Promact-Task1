@@ -57,14 +57,43 @@
             <div class="flex-item-left">
                <form name="contact">
                   <label for="fname">First Name</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Your name" required="">
+                  <input type="text" id="fname" name="firstname" placeholder="Your first name" required="">
                   <label for="lname">Last Name</label>
                   <input type="text" id="lname" name="lastname" placeholder="Your last name" required="">
                   <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
-                  <label for="subject">Subject</label>
-                  <textarea id="subject" name="subject" placeholder="Write something.." rows="5" required=""></textarea>
-                  <input type="submit" value="Submit" onclick="submitForm(document.contact.email)">
+                  <input type="email" id="mail" name="email" placeholder="Your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
+                  <label for="phone">Contact No.</label>
+                  <input type="number" id="phno" name="phone" placeholder="Your contact no." pattern="^[789]\d{9}$" required="" minlength="10" maxlength="10">
+
+                  <div class="radiobutton">
+                    <label for="gender">Gender</label>
+                    <div class="gender-radio">
+                      <input type="radio" class="radio" name="male" value="male" id="m" />
+                      <label class="label-radio" for="male">Male</label>
+                      <input type="radio" class="radio" name="female" value="female" id="f" checked="" />
+                      <label class="label-radio" for="female">Female</label>
+                    </div>
+                  </div>
+
+                  <div class="checkbox">
+                    <label for="skills">Skills</label>
+                    <div class="skills-check">
+                      <input type="checkbox" name="designing" id="design" value="designing" required>
+                      <label class="label-check" for="designing">Designing</label>
+                      <input type="checkbox" name="coding" id="code" value="coding" required>
+                      <label class="label-check" for="coding">Coding</label>
+                      <input type="checkbox" name="accounting" id="account" value="accounting" required>
+                      <label class="label-check" for="accounting">Accounting</label>
+                      <input type="checkbox" name="developing" id="develop" value="developing" required>
+                      <label class="label-check" for="developing">Developing</label>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." rows="5" required=""></textarea>
+                  </div>
+                  <input type="submit" value="Submit" onclick="submitForm(document.contact.email); phoneValidation(document.contact.phone)">
                </form>
             </div>
 
@@ -82,72 +111,6 @@
          <p>Copyright ©2020 Demo All Rights Reserved.</p>
       </footer>
       <!-- Footer finish -->
-
-      <!-- Script start -->
-      <script>
-      	// Header Function Start
-         function myFunction() {
-           var x = document.getElementById("myTopnav");
-           if (x.className === "topnav") {
-             x.className += " responsive";
-           } else {
-             x.className = "topnav";
-           }
-         }
-         // Header Function Finish
-
-         // Slideshow Function Start
-         var slideIndex = 0
-         showSlides();
-         
-         function showSlides() {
-           var i;
-           var slides = document.getElementsByClassName("mySlides");
-           for (i = 0; i < slides.length; i++) {
-             slides[i].style.display = "none";  
-           }
-           slideIndex++;
-           if (slideIndex > slides.length) {slideIndex = 1}    
-           
-           slides[slideIndex-1].style.display = "block";  
-           setTimeout(showSlides, 3000); // Change image every 2 seconds
-         }
-         // Slideshow Function finish
-
-         // Contact Us Form Validation Function Start
-         function submitForm(inputEmail) {
-         	var fName = document.forms["contact"]["fname"].value;
-         	var lName = document.forms["contact"]["lname"].value;
-         	var email = document.forms["contact"]["email"].value;
-         	var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-         
-         	var sub = document.forms["contact"]["subject"].value;
-         
-         	if (fName == "" && lName == "")
-         	{
-         		text = "Field is empty";
-         	}
-         
-         	else if (sub == "" && email == "")
-         	{
-         		text = "Field is empty";
-         	}
-         	
-         	else if (email != "")
-         	{
-         		if (!inputEmail.value.match(pattern)) 
-         		{	
-         			return false;
-         		}
-         		else
-         		{
-         	  		alert("Your details has been submitted");
-         	  		return true;
-         		}
-         	} 
-         }
-         // Contact Us Form Validation Function Finish
-      </script>
-      <!-- Script finish -->
+      <script src='homepage.js'></script>
    </body>
 </html>

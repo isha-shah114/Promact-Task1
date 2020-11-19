@@ -1,3 +1,22 @@
+@media screen and (max-width: 1200px) {
+	.about-img {
+		width: 100%;
+	}
+	.flex-item-right,
+	.flex-item-left {
+		flex: 100%;
+	}
+	.flex-container {
+		flex-wrap: wrap;
+	}
+	.map-size {
+		width: 500px;
+	}
+	.flex-container-contact {
+		margin-top: 30px;
+	}
+}
+
 @media screen and (max-width: 992px) {
 	.about-img {
 		width: 100%;
@@ -11,13 +30,9 @@
 	}
 	.map-size {
 		width: 100%;
-		object-fit: fill;
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
 	}
 	.flex-container-contact {
-		flex-wrap: wrap;
+		margin-top: 30px;
 	}
 }
 
@@ -33,13 +48,30 @@
 		flex-wrap: wrap;
 	}
 	.map-size {
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
+		width: 100%;
+		height: 450px;
 	}
 	.flex-container-contact {
 		flex-wrap: wrap;
-		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	h1 {
+		margin: 35px 0 0 0;
+	}
+	.flex-item-right,
+	.flex-item-left {
+		flex: 100%;
+	}
+	.flex-container {
+		flex-wrap: wrap;
+	}
+	.map-size {
+		width: 100%;
+	}
+	.flex-container-contact {
+		flex-wrap: wrap;
 	}
 }
 
@@ -78,8 +110,7 @@
 		font-size: 15px;
 	}
 	.map-size {
-		width: 500px;
-		height: 450px;
+		width: 100%;
 	}
 }
 
@@ -97,8 +128,7 @@
 		font-size: 14px;
 	}
 	.map-size {
-		width: 400px;
-		height: 350px;
+		width: 100%;
 	}
 	.flex-container-contact {
 		margin-top: 30px;

@@ -17,7 +17,7 @@ body {
 
 .topnav {
 	overflow: hidden;
-	background-color: #333;
+	background-color: #959ca4;
 }
 
 .right-menu {
@@ -26,7 +26,7 @@ body {
 
 .topnav a {
 	display: inline-block;
-	color: #f2f2f2;
+	color: #fff;
 	text-align: center;
 	padding: 25px 16px;
 	text-decoration: none;
@@ -184,7 +184,7 @@ h1 {
 }
 
 input[type=text],
-[type=email],
+[type=email], [type=number],
 textarea {
 	width: 100%;
 	padding: 12px;
@@ -195,9 +195,54 @@ textarea {
 	resize: vertical;
 }
 
+input[type=radio], [type=checkbox],
+input.radio input.checkbox {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+
+.radiobutton{
+	float: left;
+    clear: none;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.label-radio {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+}
+
+.gender-radio
+{
+	margin: 2% 0;
+}
+
+.checkbox{
+	float: left;
+    clear: none;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.label-check {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+}
+
+.skills-check
+{
+	margin: 2% 0;
+}
+
 input[type=submit] {
-	background-color: #4CAF50;
-	color: white;
+	background-color: yellow;
+	color: black;
 	padding: 12px 20px;
 	border: none;
 	border-radius: 4px;
@@ -205,12 +250,12 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-	background-color: #45a049;
+	background-color: #e0cf05;
 }
 
 .map-size {
-	height: 450px;
-	width: 600px;
+	height: 100%;
+	width: 100%;
 }
 
 @keyframes fadeInAnimation {
@@ -231,6 +276,7 @@ footer {
 }
 
 footer p {
-	color: white;
+	color: #969292;
+	font-size: 12px;
 }
 /***** Footer class *****/
