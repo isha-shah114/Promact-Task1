@@ -12,11 +12,11 @@
          <div class="topnav" id="myTopnav">
             <img src="images/logo.png" class="logo-size">
             <div class="right-menu">
-               <a href="#home" id="default" class="active mt-xs-15" onclick="highlight(this);">Home</a>
-               <a href="#about" onclick="highlight(this);">About Us</a>
-               <a href="#contact" onclick="highlight(this);">Contact</a>
+               <a href="#home" id="default" class="active mt-xs-15" onclick="activeLink(this);">Home</a>
+               <a href="#about" onclick="activeLink(this);">About Us</a>
+               <a href="#contact" onclick="activeLink(this);">Contact</a>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
             <i class="fa fa-bars"></i>
             </a>
          </div>
@@ -36,7 +36,7 @@
       <!-- About Us start -->
       <section id="about">
          <div class="animated animatedFadeInUp fadeInUp">
-            <h1 class="pt-10">About Us</h1>
+            <h1 class="pt-3">About Us</h1>
             <div class="flex-container">
                <div class="flex-item-left">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -52,7 +52,7 @@
       <!-- Contact Us start -->
       <section id="contact">
          <div class="animated-contact">
-            <h1 class="pt-8">Contact Us</h1>
+            <h1 class="pt-3">Contact Us</h1>
             <div class="flex-container-contact">
                <div class="flex-item-left">
                   <form name="contact">
@@ -86,7 +86,7 @@
                            <label class="label-check pr-md-0" for="developing">Developing</label>
                         </div>
                      </div>
-                     <div style="visibility:hidden; color:red; " id="chk_option_error"></div>
+                     <div style="visibility:hidden; color:red;" id="chk_option_error"></div>
                      <div>
                         <label for="subject">Subject</label>
                         <textarea id="subject" name="subject" placeholder="Write something.." rows="5" required=""></textarea>

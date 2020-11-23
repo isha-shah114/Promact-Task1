@@ -12,6 +12,11 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.pt-3
+{
+	padding-top: 3%;
+}
+
 /***** Header class *****/
 header
 {
@@ -26,7 +31,7 @@ header
 	height: 60px;
 	width: 150px;
 	float: left;
-	margin: 5px 0 0 20px;
+	margin: 0.2% 0 0 2%;
 }
 
 .topnav {
@@ -36,6 +41,7 @@ header
 
 .right-menu {
 	float: right;
+	padding-right: 1%;
 }
 
 .topnav a {
@@ -117,6 +123,11 @@ header
 
 
 /***** About Us class *****/
+#about
+{
+	margin: 4% 1%;
+}
+
 .about-img {
 	border-radius: 10px;
 	vertical-align: middle;
@@ -124,13 +135,7 @@ header
 
 h1 {
 	text-align: center;
-	margin: 50px;
 	font-family: serif;
-}
-
-.pt-10
-{
-	padding-top: 10%;
 }
 
 .flex-container {
@@ -198,9 +203,11 @@ h1 {
 
 
 /***** Contact Us class *****/
-.pt-8
+
+#contact
 {
-	padding-top: 8%;
+	background-color: #8080800f;
+	margin-top: 3%;
 }
 
 .animated-contact {
@@ -213,8 +220,7 @@ h1 {
 	display: flex;
 	flex-wrap: nowrap;
 	font-size: 15px;
-	background-color: #8080800f;
-	padding: 20px;
+	margin: 1%;
 }
 
 input[type=text],

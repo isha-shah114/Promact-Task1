@@ -1,22 +1,22 @@
 // Header Function Start
 var current = document.getElementById('default');
 
-  function highlight(el)
+  function activeLink(link)
   {
-     if (current != null)
+     if (current !== null)
      {
          current.className = "";
      }
-     el.className = "active";
-     current = el;
+     link.className = "active";
+     current = link;
   }
 
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+function hamburgerMenu() {
+  var menu = document.getElementById("myTopnav");
+  if (menu.className === "topnav") {
+    menu.className += " responsive";
   } else {
-    x.className = "topnav";
+    menu.className = "topnav";
   }
 }
 // Header Function Finish
@@ -41,7 +41,7 @@ function imageLoop() {
 
 function arrowClick(e) {
   var target = e.target;
-  if (target == leftArrow) {
+  if (target === leftArrow) {
     clearInterval(imageSlideshowInterval);
     hideImages();
     if (counter == 1) {
@@ -55,10 +55,10 @@ function arrowClick(e) {
       imageSlideshowInterval = setInterval(slideshow, 3000);
     }
   } 
-  else if (target == rightArrow) {
+  else if (target === rightArrow) {
     clearInterval(imageSlideshowInterval);
     hideImages();
-    if (counter == imageSlides.length) {
+    if (counter === imageSlides.length) {
       counter = 0;
       imageLoop();
       imageSlideshowInterval = setInterval(slideshow, 3000);
@@ -100,95 +100,44 @@ function submitForm() {
   var patternPhno = /^\d{10}/;
   var gender = document.forms["contact"]["gender"].value;
   console.log(gender);
-  var inputElements = document.getElementsByClassName('skills');
-  console.log(inputElements);
+  var skill = document.getElementsByClassName('skills');
+  console.log(skill);
   var sub = document.forms["contact"]["subject"].value;
   console.log(sub);
 
   var checkedValue = []; 
   var i, j=0;
   
-  if (fName == "")
+  if (fName === "" || lName === "" || email === "" || phone === "" || sub === "")
   {
-    alert("Enter First name");
+    alert("Your form field is empty");
   }
 
-  else if (lName == "") 
+  else if (pattern.test(email) === false || patternPhno.test(phone) === false) 
   {
-    alert("Enter Last name");
+    alert("Enter valid Email address or check format of phone number");
   }
-
-  else if (email == "") 
+      
+  else if (checkedValue == "") 
   {
-    alert("Enter Email address");
-  }
-  else if (phone == "") 
-  {
-    alert("Enter Phone number");
-  }  
-  else if (sub == "")
-  {
-    alert("Enter Subject");
-  }
-  
-  if (email != "") 
-  {
-    if (pattern.test(email) == false) 
+    for(i=0; i<skill.length; ++i)
     {
-      alert("Enter valid Email address");
-    }
-    else 
-    {
-      if (patternPhno.test(phone) == false) 
+      if(skill[i].checked)
       {
-        alert("Contact number format is incorrect");
-      }
-      else
-      {
-        if (gender == "female") 
-        {
-          for(i=0; i<inputElements.length; ++i)
-          {
-            if(inputElements[i].checked)
-            {
-              checkedValue[j] = inputElements[i].value;
-              j++;
-            }
-          }
-          if (checkedValue.length > 0) 
-          {
-            var skills = checkedValue.toString();
-            alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
-            "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
-          } 
-          else 
-          {
-            alert("Please select CheckBoxe(s).");
-          }
-        }
-        else if (gender == "male") 
-        {
-          for(i=0; i<inputElements.length; ++i)
-          {
-            if(inputElements[i].checked)
-            {
-              checkedValue[j] = inputElements[i].value;
-              j++;
-            }
-          }
-          if (checkedValue.length > 0) 
-          {
-            var skills = checkedValue.toString();
-            alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
-            "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
-          } 
-          else 
-          {
-            alert("Please select CheckBoxe(s).");
-          }
-        } 
+        checkedValue[j] = skill[i].value;
+        j++;
       }
     }
+    if (checkedValue.length > 0) 
+    {
+      var skills = checkedValue.toString();
+      alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
+        "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
+    }
+    else
+    {
+      alert("Please select checkboxes");
+    }  
   }
 }
 // Contact Us Form Validation Function Finish
