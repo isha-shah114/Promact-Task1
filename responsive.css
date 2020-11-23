@@ -1,4 +1,7 @@
 @media screen and (max-width: 1200px) {
+	h1 {
+		margin: 0 0 20px 0;
+	}
 	.about-img {
 		width: 100%;
 	}
@@ -17,7 +20,21 @@
 	}
 }
 
+@media screen and (max-width: 1024px) {
+	h1 {
+		margin: 0 0 20px 0;
+	}
+	.pr-md-0
+	{
+		padding-right: 0;
+	}
+}
+
 @media screen and (max-width: 992px) {
+	.pt-8{padding-top: 11%;}
+	h1 {
+		margin: 0 0 30px 0;
+	}
 	.about-img {
 		width: 100%;
 	}
@@ -37,6 +54,7 @@
 }
 
 @media screen and (max-width: 800px) {
+	.pt-8{padding-top: 11%;}
 	h1 {
 		margin: 35px 0 0 0;
 	}
@@ -57,6 +75,7 @@
 }
 
 @media screen and (max-width: 768px) {
+	.pt-8{padding-top: 11%;}
 	h1 {
 		margin: 35px 0 0 0;
 	}
@@ -76,6 +95,9 @@
 }
 
 @media screen and (max-width: 600px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+
 	.topnav a {
 		display: none;
 	}
@@ -101,7 +123,7 @@
 		display: contents;
 	}
 	.mt-xs-15 {
-		margin-top: 12%;
+		margin-top: 11.2%;
 	}
 	.about-img {
 		width: 100%;
@@ -114,9 +136,19 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
 	.mt-xs-15 {
-		margin-top: 15%;
+		margin-top: 12.4%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+	.mt-xs-15 {
+		margin-top: 16.2%;
 	}
 	h1 {
 		margin: 35px 0 0 0;
@@ -132,5 +164,74 @@
 	}
 	.flex-container-contact {
 		margin-top: 30px;
+	}
+	.mr-xs-3
+	{
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+	.mt-xs-15 {
+		margin-top: 17.9%;
+	}
+	.mr-xs-3
+	{
+		margin-right: -3%;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+	.mt-xs-15 {
+		margin-top: 18.7%;
+	}
+
+	.checkbox
+	{
+		margin: 3% 0 6% 0;
+	}
+	.mr-xs-3
+	{
+		margin-right: -9%;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+	.mt-xs-15 {
+		margin-top: 20.8%;
+	}
+
+	.pr-xs-21
+	{
+		padding-right: 21%;
+	}
+
+	.mr-xs-3
+	{
+		margin-right: -3%;
+	}
+}
+
+@media screen and (max-width: 280px) {
+	.pt-10{padding-top: 0;}
+	.pt-8{padding-top: 0;}
+	.mt-xs-15 {
+		margin-top: 24%;
+	}
+
+	.pr-xs-21
+	{
+		padding-right: 5%;
+	}
+
+	.mr-xs-3
+	{
+		margin-right: -3%;
 	}
 }

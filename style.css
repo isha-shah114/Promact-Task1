@@ -2,12 +2,26 @@
 	box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 /***** Header class *****/
+header
+{
+  	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	z-index: 1;
+  	display: block;
+}
+
 .topnav img.logo-size {
 	height: 60px;
 	width: 150px;
@@ -50,44 +64,54 @@ body {
 /***** Header class *****/
 
 /***** Slideshow class *****/
-.mySlides {
-	display: none;
+.slideshowContainer {
+  position: relative;
+  overflow: hidden;
+  margin: 50px 0 75px;
+  width: 100%;
+  height: 600px;
 }
 
-.mySlides img {
-	width: 100%;
+.imageSlides {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
 }
 
-.slideshow-container {
-	position: relative;
-	margin: auto;
+/* add 'visible' class via Javascript */
+.visible {
+  opacity: 1;
 }
 
-/***** Fading animation *****/
-
-.fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 3s;
-	animation-name: fade;
-	animation-duration: 3s;
+.slideshowArrow {
+  font-size: 7em;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
 }
 
-@-webkit-keyframes fade {
-	from {
-		opacity: .4
-	}
-	to {
-		opacity: 1
-	}
+.slideshowArrow:hover {
+  opacity: 0.75;
 }
 
-@keyframes fade {
-	from {
-		opacity: .4
-	}
-	to {
-		opacity: 1
-	}
+#leftArrow {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#rightArrow {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translate(50%, -50%);
 }
 /***** Slideshow class *****/
 
@@ -102,6 +126,11 @@ h1 {
 	text-align: center;
 	margin: 50px;
 	font-family: serif;
+}
+
+.pt-10
+{
+	padding-top: 10%;
 }
 
 .flex-container {
@@ -169,6 +198,11 @@ h1 {
 
 
 /***** Contact Us class *****/
+.pt-8
+{
+	padding-top: 8%;
+}
+
 .animated-contact {
 	animation: fadeInAnimation ease 3s;
 	animation-iteration-count: 1;
@@ -240,7 +274,7 @@ input.radio input.checkbox {
 	margin: 2% 0;
 }
 
-input[type=submit] {
+input[type=button] {
 	background-color: yellow;
 	color: black;
 	padding: 12px 20px;
@@ -249,7 +283,7 @@ input[type=submit] {
 	cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
 	background-color: #e0cf05;
 }
 

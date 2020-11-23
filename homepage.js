@@ -1,4 +1,16 @@
 // Header Function Start
+var current = document.getElementById('default');
+
+  function highlight(el)
+  {
+     if (current != null)
+     {
+         current.className = "";
+     }
+     el.className = "active";
+     current = el;
+  }
+
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -10,27 +22,72 @@ function myFunction() {
 // Header Function Finish
 
 // Slideshow Function Start
-var slideIndex = 0
-showSlides();
+var imageSlides = document.getElementsByClassName('imageSlides');
+var leftArrow = document.getElementById('leftArrow');
+var rightArrow = document.getElementById('rightArrow');
+var counter = 0;
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+function hideImages() {
+  for (var i = 0; i < imageSlides.length; i++) {
+    imageSlides[i].classList.remove('visible');
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+
+function imageLoop() {
+  var currentImage = imageSlides[counter];
+  currentImage.classList.add('visible');
+  counter++;
+}
+
+function arrowClick(e) {
+  var target = e.target;
+  if (target == leftArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    if (counter == 1) {
+      counter = (imageSlides.length - 1);
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 3000);
+    } else {
+      counter--;
+      counter--;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 3000);
+    }
+  } 
+  else if (target == rightArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    if (counter == imageSlides.length) {
+      counter = 0;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 3000);
+    } else {
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 3000);
+    }
+  }
+}
+
+leftArrow.addEventListener('click', arrowClick);
+rightArrow.addEventListener('click', arrowClick);
+
+function slideshow() {
+  if (counter < imageSlides.length) {
+    imageLoop();
+  } else {
+    counter = 0;
+    hideImages();
+    imageLoop();
+  }
+}
+
+setTimeout(slideshow);
+var imageSlideshowInterval = setInterval(slideshow, 3000);
 // Slideshow Function finish
 
 // Contact Us Form Validation Function Start
-function submitForm(inputEmail) {
+function submitForm() {
   var fName = document.forms["contact"]["fname"].value;
   console.log(fName);
   var lName = document.forms["contact"]["lname"].value;
@@ -38,41 +95,100 @@ function submitForm(inputEmail) {
   var email = document.forms["contact"]["mail"].value;
   console.log(email);
   var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
+  var phone = document.forms["contact"]["phno"].value;
+  console.log(phone);
+  var patternPhno = /^\d{10}/;
+  var gender = document.forms["contact"]["gender"].value;
+  console.log(gender);
+  var inputElements = document.getElementsByClassName('skills');
+  console.log(inputElements);
   var sub = document.forms["contact"]["subject"].value;
   console.log(sub);
 
-  if (fName == "" && lName == "") 
+  var checkedValue = []; 
+  var i, j=0;
+  
+  if (fName == "")
   {
-    text = "Field is empty";
-  } 
-  else if (sub == "" && email == "") 
+    alert("Enter First name");
+  }
+
+  else if (lName == "") 
   {
-    text = "Field is empty";
+    alert("Enter Last name");
+  }
+
+  else if (email == "") 
+  {
+    alert("Enter Email address");
   }
   else if (phone == "") 
   {
-    text = "Field is empty";
-  } 
-  else if (email != "") 
+    alert("Enter Phone number");
+  }  
+  else if (sub == "")
   {
-    if (!inputEmail.value.match(pattern)) 
+    alert("Enter Subject");
+  }
+  
+  if (email != "") 
+  {
+    if (pattern.test(email) == false) 
     {
-      return false;
+      alert("Enter valid Email address");
     }
     else 
     {
-      alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
-      "\nYour Phone No. : "+phno.value+ "\nYour Message : " +subject.value);
-      return true;
+      if (patternPhno.test(phone) == false) 
+      {
+        alert("Contact number format is incorrect");
+      }
+      else
+      {
+        if (gender == "female") 
+        {
+          for(i=0; i<inputElements.length; ++i)
+          {
+            if(inputElements[i].checked)
+            {
+              checkedValue[j] = inputElements[i].value;
+              j++;
+            }
+          }
+          if (checkedValue.length > 0) 
+          {
+            var skills = checkedValue.toString();
+            alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
+            "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
+          } 
+          else 
+          {
+            alert("Please select CheckBoxe(s).");
+          }
+        }
+        else if (gender == "male") 
+        {
+          for(i=0; i<inputElements.length; ++i)
+          {
+            if(inputElements[i].checked)
+            {
+              checkedValue[j] = inputElements[i].value;
+              j++;
+            }
+          }
+          if (checkedValue.length > 0) 
+          {
+            var skills = checkedValue.toString();
+            alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
+            "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
+          } 
+          else 
+          {
+            alert("Please select CheckBoxe(s).");
+          }
+        } 
+      }
     }
   }
 }
 // Contact Us Form Validation Function Finish
-
-function phoneValidation(inputPhone) {
-  var phone = document.forms["contact"]["phno"].value;
-  console.log(phone);
-  var phonePattern = /^[789]\d{9}$/;
-
-}
