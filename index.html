@@ -9,7 +9,7 @@
    <body>
       <!-- Header start -->
       <header>
-         <div class="topnav" id="myTopnav">
+         <div class="topnav" id="navigation">
             <img src="images/logo.png" class="logo-size">
             <div class="right-menu">
                <a href="#home" id="default" class="active mt-xs-15" onclick="activeLink(this);">Home</a>
@@ -36,7 +36,7 @@
       <!-- About Us start -->
       <section id="about">
          <div class="animated animatedFadeInUp fadeInUp">
-            <h1 class="pt-3">About Us</h1>
+            <h1>About Us</h1>
             <div class="flex-container">
                <div class="flex-item-left">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -52,7 +52,7 @@
       <!-- Contact Us start -->
       <section id="contact">
          <div class="animated-contact">
-            <h1 class="pt-3">Contact Us</h1>
+            <h1>Contact Us</h1>
             <div class="flex-container-contact">
                <div class="flex-item-left">
                   <form name="contact">
@@ -67,26 +67,37 @@
                      <div class="radiobutton">
                         <label for="gender">Gender</label>
                         <div class="gender-radio">
-                           <input type="radio" class="radio" name="gender" value="male" id="m" />
-                           <label class="label-radio" for="male">Male</label>
-                           <input type="radio" class="radio" name="gender" value="female" id="f" checked="" />
-                           <label class="label-radio" for="female">Female</label>
+                           <label for="m" class="label-radio"> 
+                              <input type="radio" name="gender" id="m" value="male" /> 
+                              Male
+                           </label>
+                           <label for="f" class="label-radio"> 
+                              <input type="radio" name="gender" id="f" value="female" checked="" /> 
+                              Female
+                           </label>
                         </div>
                      </div>
                      <div class="checkbox">
                         <label for="skills">Skills</label>
                         <div class="skills-check" id="tblFruits">
-                           <input type="checkbox" class="skills" name="skill" id="design" value="Designing">
-                           <label class="label-check" for="designing" >Designing</label>
-                           <input type="checkbox" class="skills" name="skill" id="code" value="Coding" >
-                           <label class="label-check pr-xs-21" for="coding">Coding</label>
-                           <input type="checkbox" class="skills" name="skill" id="account" value="Accounting" >
-                           <label class="label-check mr-xs-3" for="accounting">Accounting</label>
-                           <input type="checkbox" class="skills" name="skill" id="develop" value="Developing" >
-                           <label class="label-check pr-md-0" for="developing">Developing</label>
+                           <label for="design" class="label-check">
+                              <input type="checkbox" class="skills" name="skill" id="design" value="Designing"> 
+                              Designing
+                           </label>
+                           <label for="code" class="label-check pr-xs-21" >
+                              <input type="checkbox" class="skills" name="skill" id="code" value="Coding" >
+                              Coding
+                           </label>
+                           <label for="account" class="label-check mr-xs-3">
+                              <input type="checkbox" class="skills" name="skill" id="account" value="Accounting" >
+                              Accounting
+                           </label>
+                           <label class="label-check pr-md-0" for="develop">
+                              <input type="checkbox" class="skills" name="skill" id="develop" value="Developing" >
+                              Developing
+                           </label>
                         </div>
                      </div>
-                     <div style="visibility:hidden; color:red;" id="chk_option_error"></div>
                      <div>
                         <label for="subject">Subject</label>
                         <textarea id="subject" name="subject" placeholder="Write something.." rows="5" required=""></textarea>

@@ -12,7 +12,7 @@ var current = document.getElementById('default');
   }
 
 function hamburgerMenu() {
-  var menu = document.getElementById("myTopnav");
+  var menu = document.getElementById("navigation");
   if (menu.className === "topnav") {
     menu.className += " responsive";
   } else {
@@ -107,6 +107,7 @@ function submitForm() {
 
   var checkedValue = []; 
   var i, j=0;
+  var skills;
   
   if (fName === "" || lName === "" || email === "" || phone === "" || sub === "")
   {
@@ -117,7 +118,7 @@ function submitForm() {
   {
     alert("Enter valid Email address or check format of phone number");
   }
-      
+
   else if (checkedValue == "") 
   {
     for(i=0; i<skill.length; ++i)
@@ -130,14 +131,18 @@ function submitForm() {
     }
     if (checkedValue.length > 0) 
     {
-      var skills = checkedValue.toString();
-      alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
-        "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
+      skills = checkedValue.toString();
     }
-    else
-    {
-      alert("Please select checkboxes");
-    }  
+   else
+   {
+     alert("Please select checkboxes");
+   } 
+  }
+
+  if (fName !== "" && lName !== "" && email !== "" && phone !== "" && sub !== "" && pattern.test(email) === true && patternPhno.test(phone) === true && skills !== undefined) 
+  {
+    alert("Your First Name : " +fname.value+ "\nYour Last Name : " +lname.value+ "\nYour Email : "+mail.value+ 
+        "\nYour Phone No. : "+phno.value+ "\nGender : " +gender+ "\nSkill : " +skills+ "\nYour Message : " +subject.value);
   }
 }
 // Contact Us Form Validation Function Finish
